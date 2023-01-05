@@ -101,6 +101,7 @@ Report the Performance measures of the 3 Models
 from sklearn.metrics import accuracy_score
 from sklearn import metrics
 import timeit
+
 ## Model 1 
 y_test_pred = model1.predict(X_test)
 accuracy_KNN1 = accuracy_score(y_test, y_test_pred)
@@ -128,22 +129,24 @@ print('Time:',stop - start)
 # With Standardization: 
 y_test_pred3 = model3.predict(X_test3)
 accuracy_KNN3 = accuracy_score(y_test3, y_test_pred3)
-print(accuracy_KNN3) # 0.9006666666666666
+print(accuracy_KNN3) # 0.901
 metrics.precision_score(y_test3, y_test_pred3) # for precision score 
 metrics.recall_score(y_test3, y_test_pred3)
 
 # WithOUT Standardizartion: 
 y_test_pred3_Unstd = model3_Unstd.predict(X_test3_Unstd)
 accuracy_KNN3_Unstd = accuracy_score(y_test3_Unstd, y_test_pred3_Unstd)
-print(accuracy_KNN3_Unstd) #0.896666666666666 
-# ^ Since the auccracy score for Unstd model is lower, I will use the Std. model 
+print(accuracy_KNN3_Unstd) # 0.897
+# ^ Since the auccracy score for Unstandardized model is lower, I will use the Standardized model 
 
+# Task 6 Report the top three most important variables for Model 2 and Model 3 
+# Model 2: Income, CD Account, Education 
+# Model 3: Unable to be determined since we used PCA   
 
-start = timeit.default_timer()
-model3 = knn3.fit(X_train3, y_train3)
-stop = timeit.default_timer()
-print('Time:',stop - start)
+# Results 
 
+# LASSO resulted in the best performance with the highest accuracy score of 96% and 
+# the most influential predictors are Income, CD Account, and Education.
 
 
 
