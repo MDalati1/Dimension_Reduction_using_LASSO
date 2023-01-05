@@ -7,7 +7,7 @@ Created on Sat Oct 29 09:28:22 2022
 """
 import pandas as pd 
 import numpy as np
-bank_df = pd.read_csv('/Users/mohamaddalati/Desktop/INSY-662/Assignment4/UniversalBank.csv')
+bank_df = pd.read_csv('/Users/mohamaddalati/Desktop/UniversalBank.csv')
 
 ###             Task 0: 
 bank_df.drop(labels = 'UserID', axis = 1, inplace = True)
